@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5 - Sum of Even Numbers</title>
+</head>
+<body>
+
+    <button onclick="calculateEvenSum()">Click me</button>
+
+    <script>
+        function calculateEvenSum() {
+            let numbers = []; // Create an empty array
+            let evenNumbers = [];
+            let sum = 0;
+
+            for (let i = 0; i < 100; i++) {
+                numbers.push(i); // Add numbers to the array
+                if (i % 2 === 0) { // Check if the number is even
+                    evenNumbers.push(i);
+                    sum += i; // Compute the sum of even numbers
+                }
+            }
+
+            console.log("Even Numbers:", evenNumbers);
+            console.log("Sum of Even Numbers:", sum);
+        }
+    </script>
+
+</body>
+</html>
