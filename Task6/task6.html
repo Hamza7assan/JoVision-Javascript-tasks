@@ -28,9 +28,10 @@
         // Button 2: Add numbers 100 to 150 to the array
         function addNumbersToArray() {
             let numbers = createArray();
-            let newNumbers = Array.from({length: 51}, (_, i) => i + 100);
+            let newNumbers = Array.from({length: 50}, (_, i) => i + 101);
             numbers = numbers.concat(newNumbers);
-            console.log("Array after adding numbers 100 to 150:", numbers);
+            console.log("Array after adding numbers 100 to 150:\n" + numbers.toString());
+
         }
 
         // Button 3: Add 3 to each array member
