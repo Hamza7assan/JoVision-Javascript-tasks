@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get IP Address</title>
+</head>
+<body>
+
+    <button id="getIpBtn" onclick="fetchIP()">Get IP</button>
+
+    <script>
+        function fetchIP() {
+            let button = document.getElementById("getIpBtn");
+
+            fetch("https://api.ipify.org/?format=text")
+                .then(response => response.text())  // Convert response to text
+                .then(ip => {
+                    button.textContent = ip;  // Replace button text with IP
+                })
+                .catch(error => {
+                    console.error("Error fetching IP:", error);
+                    button.textContent = "Error fetching IP";
+                });
+        }
+    </script>
+
+</body>
+</html>
