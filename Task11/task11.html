@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get IP Address</title>
+</head>
+<body>
+    <button id="getIpBtn">Get IP</button>
+
+    <script>
+        function fetchIP() {
+            const apiUrl = "https://api.ipify.org?format=json";
+            fetch(apiUrl)
+                .then(handleResponse)
+                .then(updateButton)
+                .catch(handleError);
+        }
+
+        function handleResponse(response) {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        }
+
+        function updateButton(data) {
+            document.getElementById("getIpBtn").innerText = data.ip;
+        }
+
+        function handleError(error) {
+            alert("Error fetching IP: " + error.message);
+        }
+
+        function addEventListeners() {
+            document.getElementById("getIpBtn").addEventListener("click", fetchIP);
+        }
+
+        addEventListeners();
+    </script>
+</body>
+</html>
