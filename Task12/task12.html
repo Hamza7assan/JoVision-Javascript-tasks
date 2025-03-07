@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+</head>
+<body>
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Name">
+    
+    <label for="age">Age:</label>
+    <input type="number" id="age" placeholder="Age">
+    
+    <button id="submitBtn">Submit</button>
+
+    <script>
+        function handleSubmit() {
+            const nameValue = document.getElementById("name").value;
+            const ageValue = document.getElementById("age").value;
+            const timestamp = new Date().toLocaleString(); // Get current date and time
+
+            const user = {
+                name: nameValue,
+                age: ageValue,
+                timestamp: timestamp
+            };
+
+            const { name, age, timestamp: time } = user;
+
+            alert(`Your name is: ${name}\nYour age is: ${age}\nTimestamp: ${time}`);
+        }
+
+        document.getElementById("submitBtn").addEventListener("click", handleSubmit);
+    </script>
+</body>
+</html>
